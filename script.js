@@ -35,49 +35,67 @@ function filterProjects(category){
 }
 
 updateCount();
-fetch("projects.json")
+fetch("https://api.github.com/users/AMRITHA-LAL/repos")
 
 .then(response => response.json())
 
-.then(projects => {
+.then(repositories => {
 
-    document.getElementById(
-        "repo-count"
-    ).innerText =
+    // Hide forks
+    repositories = repositories.filter(repo => !repo.fork);
 
-    `Total Repositories: ${projects.length}`;
-
-    const container =
-    document.getElementById(
-        "repo-container"
+    // Sort newest first
+    repositories.sort(
+        (a,b)=>
+        new Date(b.updated_at)-new Date(a.updated_at)
     );
 
-    container.innerHTML = "";
+    document.getElementById("repo-count").innerHTML =
+    `Total Repositories: ${repositories.length}`;
 
-    projects.forEach(project => {
+    const container =
+    document.getElementById("repo-container");
 
-        const card =
-        document.createElement(
-            "div"
-        );
+    container.innerHTML="";
 
-        card.className =
-        "project-card";
+    repositories.forEach(repo=>{
 
-        card.innerHTML = `
+        const card=document.createElement("div");
 
-            <h3>${project.name}</h3>
+        card.className="project-card";
 
-            <p>
-            ${project.description || "No Description"}
-            </p>
+        card.innerHTML=`
 
-            <a href="${project.url}"
-               target="_blank">
+        <h3>${repo.name}</h3>
 
-               View Repository
+        <p>
+        ${repo.description || "No description available."}
+        </p>
 
-            </a>
+        <p>
+
+        <strong>Language:</strong>
+        ${repo.language || "Not specified"}
+
+        </p>
+
+        <p>
+
+        ⭐ ${repo.stargazers_count}
+
+        &nbsp;&nbsp;&nbsp;
+
+        🍴 ${repo.forks_count}
+
+        </p>
+
+        <a href="${repo.html_url}"
+        target="_blank">
+
+        View Repository
+
+        </a>
+
         `;
 
         container.appendChild(card);
