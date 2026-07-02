@@ -72,22 +72,6 @@ fetch("https://api.github.com/users/AMRITHA-LAL/repos")
         ${repo.description || "No description available."}
         </p>
 
-        <p>
-
-        <strong>Language:</strong>
-        ${repo.language || "Not specified"}
-
-        </p>
-
-        <p>
-
-        ⭐ ${repo.stargazers_count}
-
-        &nbsp;&nbsp;&nbsp;
-
-        🍴 ${repo.forks_count}
-
-        </p>
 
         <a href="${repo.html_url}"
         target="_blank">
