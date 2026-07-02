@@ -24,6 +24,7 @@ body{
     align-items:center;
     text-align:center;
     padding:40px;
+    margin-bottom:60px;
     background:linear-gradient(
     135deg,
     #111827,
@@ -275,33 +276,7 @@ section{
 .figma-btn:hover{
     transform:translateY(-2px);
 }
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
 
-body{
-
-font-family:Segoe UI,sans-serif;
-
-background:#111827;
-
-color:white;
-
-line-height:1.7;
-
-padding:50px;
-
-}
-
-.hero{
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
 
 .hero h1{
 
