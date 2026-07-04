@@ -7,10 +7,6 @@ The project also includes Python automation experiments and GitHub Actions workf
 
 ---
 
-# 🌐 Portfolio Preview
-
-<img src="portfolio-home.jpeg" width="800">
-<div align="center">
 
 # 👩‍💻 Amritha Lal - Developer Portfolio
 
