@@ -647,3 +647,19 @@ font-size:16px;
     background:#555;
     margin:25px 0;
 }
+.back-btn{
+    display:inline-block;
+    padding:12px 28px;
+    margin-top:40px;
+    background:#0077ff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#005fcc;
+    transform:translateY(-2px);
+}
