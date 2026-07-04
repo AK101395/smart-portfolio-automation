@@ -641,3 +641,9 @@ cursor:pointer;
 font-size:16px;
 
 }
+.project-divider{
+    border:0;
+    height:1px;
+    background:#555;
+    margin:25px 0;
+}
